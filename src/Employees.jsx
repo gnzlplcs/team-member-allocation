@@ -94,21 +94,27 @@ const Employees = () => {
     <main className="container">
       <div className="row justify-content-center mt-3 mb-3">
         <div className="col-8">
-          {employees.map((employee) => (
-            <div className="card" key={employee.id}>
-              <img
-                src={femaleProfile}
-                alt={"person face"}
-                className="card-img-top"
-              />
-              <div className="card-body">
-                <h5 className="card-title">Full Name: {employee.fullName}</h5>
-                <p className="card-text">
-                  <b>Designation:</b> {employee.designation}
-                </p>
+          <div className="card-collection">
+            {employees.map((employee) => (
+              <div
+                className="card m-2"
+                key={employee.id}
+                style={{ cursor: "pointer" }}
+              >
+                <img
+                  src={(employee.gender) === 'male' ? maleProfile : femaleProfile}
+                  alt={"person face"}
+                  className="card-img-top"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Full Name: {employee.fullName}</h5>
+                  <p className="card-text">
+                    <b>Designation:</b> {employee.designation}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </main>
