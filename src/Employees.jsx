@@ -34,6 +34,7 @@ const Employees = ({
                     : "card m-2"
                 }
                 key={employee.id}
+                id={employee.id}
                 style={{ cursor: "pointer" }}
                 onClick={handleEmployeeCardClick}
               >
