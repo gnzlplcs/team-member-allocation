@@ -10,7 +10,10 @@ const Nav = () => {
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/team-member-allocation/GroupedTeamMembers">
+          <Link
+            className="nav-link"
+            to="/team-member-allocation/grouped-team-members"
+          >
             Teams
           </Link>
         </li>

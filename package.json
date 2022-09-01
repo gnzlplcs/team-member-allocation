@@ -1,6 +1,6 @@
 {
   "name": "team-member-allocation",
-  "homepage": "https://gnzlplcs.github.io/team-member-allocation/",
+  "homepage": "https://gnzlplcs.github.io/team-member-allocation",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
