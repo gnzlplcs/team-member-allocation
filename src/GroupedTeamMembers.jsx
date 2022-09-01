@@ -4,11 +4,9 @@ import DataContext from "./context/DataContext";
 const GroupedTeamMembers = () => {
   const { employees, selectedTeam, setSelectedTeam } = useContext(DataContext);
 
-  const [groupedEmployees, setGroupedEmployees] = useState(groupTeamMembers());
-
   const groupTeamMembers = () => {
     let teams = [];
-    
+
     let teamAMembers = employees.filter(
       (employee) => employee.teamName === "TeamA"
     );
@@ -61,6 +59,8 @@ const GroupedTeamMembers = () => {
     setGroupedEmployees(transformedGroupData);
     setSelectedTeam(event.currentTarget.id);
   };
+
+  const [groupedEmployees, setGroupedEmployees] = useState(groupTeamMembers());
 
   return (
     <main className="container">
