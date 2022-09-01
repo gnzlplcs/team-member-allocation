@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import Nav from "./Nav";
 import Header from "./Header";
 import Employees from "./Employees";
+import GroupedTeamMembers from "./GroupedTeamMembers";
 import Footer from "./Footer";
+import NotFound from "./NotFound";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const [selectedTeam, setSelectedTeam] = useState(
@@ -121,7 +125,8 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <Router>
+      <Nav />
       <Header
         selectedTeam={selectedTeam}
         teamMemberCount={
@@ -129,14 +134,29 @@ function App() {
             .length
         }
       />
-      <Employees
-        employees={employees}
-        selectedTeam={selectedTeam}
-        handleEmployeeCardClick={handleEmployeeCardClick}
-        handleTeamSelectionChange={handleTeamSelectionChange}
-      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Employees
+              employees={employees}
+              selectedTeam={selectedTeam}
+              handleEmployeeCardClick={handleEmployeeCardClick}
+              handleTeamSelectionChange={handleTeamSelectionChange}
+            />
+          }
+        ></Route>
+        <Route
+          path="/GroupedTeamMembers"
+          element={<GroupedTeamMembers />}
+        ></Route>
+        <Route
+          path="*"
+          element={<NotFound />}
+        ></Route>
+      </Routes>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
