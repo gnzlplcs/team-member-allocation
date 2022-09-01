@@ -15,9 +15,9 @@ function App() {
         <Nav />
         <Header />
         <Routes>
-          <Route path="/team-member-allocation" element={<Employees />}></Route>
+          <Route path="/" element={<Employees />}></Route>
           <Route
-            path="/team-member-allocation/grouped-team-members"
+            path="/grouped-team-members"
             element={<GroupedTeamMembers />}
           ></Route>
           <Route path="*" element={<NotFound />}></Route>
